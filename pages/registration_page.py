@@ -2,7 +2,7 @@ import os
 from selene import browser, command, have
 from pages import helpers
 
-from data import User
+from data.users import User
 
 
 class RegistrationPage:
@@ -88,7 +88,7 @@ class RegistrationPage:
         browser.element(f'[for=hobbies-checkbox-{str(enum_value.value)}]').click()
 
     def _upload_picture(self, file):
-        file_path = "test_demoqa/resources/" + file
+        file_path = "test_demo_qa/resources/" + file
         self.picture.send_keys(os.path.abspath(str(file_path)))
 
     def _fill_current_address(self, value):
